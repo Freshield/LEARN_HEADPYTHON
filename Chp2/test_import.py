@@ -6,4 +6,4 @@ movies = [
      ["michael palin","john cleese","terry gilliam",'eric idel','terry jones']]
 ]
 
-print_lol(movies)
+print_lol(movies,True)
