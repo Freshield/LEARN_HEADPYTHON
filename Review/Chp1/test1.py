@@ -1,1 +1,3 @@
 print('lol')
+
+help(input)
