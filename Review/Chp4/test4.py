@@ -1,5 +1,29 @@
+import sys
+
 man = []
 other = []
+
+"""
+This is nester.py module
+"""
+def print_lol(the_list, indent=False, level=0, pos=sys.stdout):
+    """
+    :param the_list: it can be any python list
+    :return:
+    """
+    for each_item in the_list:
+        if isinstance(each_item, list):
+            print_lol(each_item, indent, level+1, pos)
+        else:
+            if indent == True:
+                """
+                for tab_stop in range(level):
+                    print('\t',end='')
+                """
+                print('\t' * level, end='', file=pos)
+            print(each_item, file=pos)
+
+
 
 try:
     data = open('sketch.txt')
@@ -20,7 +44,7 @@ except IOError as err:
 
 try:
     with open('man_data.txt', 'w') as man_file, open('other_data.txt', 'w') as other_file:
-        print(man, file=man_file)
-        print(other_file, file=other_file)
+        print_lol(man, False, 0, man_file)
+        print_lol(other, False, 0, other_file)
 except IOError as err:
     print('File error ' + str(err))
