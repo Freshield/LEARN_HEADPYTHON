@@ -16,5 +16,12 @@ for key,value in dic.items():
         data = file.readline()
         data = data.strip().split(',')
         clean_data = sorted([sanitize(item) for item in data])
+
+        unique_list = []
+        for item in clean_data:
+            if item not in unique_list:
+                unique_list.append(item)
         print(clean_data)
+        print(unique_list[0:3])
+        print()
 
