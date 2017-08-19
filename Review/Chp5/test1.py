@@ -15,6 +15,6 @@ for key,value in dic.items():
     with open(value) as file:
         data = file.readline()
         data = data.strip().split(',')
-        clean_data = [sanitize(item) for item in data]
-        print(sorted(clean_data))
+        clean_data = sorted([sanitize(item) for item in data])
+        print(clean_data)
 
