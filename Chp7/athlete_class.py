@@ -34,6 +34,8 @@ def sanitize(time_string):
     (mins, secs) = time_string.split(splitter)
     return (mins + '.' + secs)
 
+"""
+
 names = ['james','julie','mikey','sarah']
 
 for i in range(4):
@@ -45,6 +47,7 @@ sarah.add_time('2.12')
 sarah.add_times(['3.23','3.45'])
 
 print(sarah.times)
+"""
 
 
 class AthleteList(list):
@@ -72,7 +75,8 @@ def get_coach_data_list(filename):
     except IOError as ioerr:
         print('File error: ' + str(ioerr))
         return None
-
+"""
 for i in range(4):
     data = get_coach_data_list(names[i] + '2.txt')
     print(data.name + "'s fastest times are: " + str(data.top3()))
+"""
